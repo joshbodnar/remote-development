@@ -1,4 +1,4 @@
-version: "2.1"
+version: "3.8"
 services:
   code-server:
     image: ghcr.io/linuxserver/code-server
@@ -10,6 +10,13 @@ services:
       - PASSWORD=joshbodnar
       - SUDO_PASSWORD=joshbodnar
     volumes:
-      - $PWD/config:/config
+      - "$PWD/config:/config"
     ports:
       - 9000:8443
+
+  server:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - "$PWD/config/workspace:/usr/share/nginx/html/"
