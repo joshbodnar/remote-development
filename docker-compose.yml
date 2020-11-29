@@ -1,0 +1,15 @@
+version: "2.1"
+services:
+  code-server:
+    image: ghcr.io/linuxserver/code-server
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=US/Eastern
+      - PASSWORD=joshbodnar
+      - SUDO_PASSWORD=joshbodnar
+    volumes:
+      - $PWD/config:/config
+    ports:
+      - 9000:8443
