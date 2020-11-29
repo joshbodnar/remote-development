@@ -1,0 +1,5 @@
+config/data/logs
+config/.bash*
+config/.cache
+config/.local
+config/.npm
