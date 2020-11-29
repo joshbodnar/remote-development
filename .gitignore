@@ -3,3 +3,4 @@ config/.bash*
 config/.cache
 config/.local
 config/.npm
+config/workspace/*
